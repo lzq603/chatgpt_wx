@@ -1,0 +1,55 @@
+/* pages/settings/settings.wxss */
+.settings-container {
+  padding: 20px;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-right: 10px;
+}
+
+.key-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #005fa3;
+}
+
+.purchase-hint {
+  display: flex;
+  align-items: center;
+}
+
+.purchase-link {
+  color: #0078d4;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.purchase-link:hover {
+  color: #005fa3;
+}

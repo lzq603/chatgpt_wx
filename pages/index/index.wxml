@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="chat-container">
+  <!-- 问候语 -->
+  <view class="message-list">
+    <view class="message-item left">
+      <view class="message-bubble">
+        {{greeting}}
+      </view>
+    </view>
+    <!-- 左边消息气泡，模拟接收到的消息 -->
+    <view bindlongpress="copyMessage" data-content="{{item.content}}" wx:for="{{messages}}" class="message-item {{item.type}}">
+      <view class="message-bubble">
+        {{item.content}}
+      </view>
+    </view>
+
+    <!-- 右边消息气泡，模拟发送的消息 -->
+    <view wx:if="{{showHint}}" class="message-item left">
+      <view class="message-bubble">
+        您的调用次数已经用完，点击右上角三个点邀请好友获取更多次数。或直接<text style="color:blueviolet" bindtap="openSettings">购买KEY</text>
+      </view>
+    </view>
+
+    <!-- 添加更多消息项... -->
+
+  </view>
+
+  <view style="display: flex;">
+    <!-- 清空按钮 -->
+    <button style="width: 50%;" class="settings-button" bindtap="clearMessages">清空</button>
+    <!-- 设置按钮 -->
+    <button style="width: 50%;" class="settings-button" bindtap="openSettings">设置</button>
+  </view>
+  <!-- 底部输入框 -->
+  <view class="input-box">
+    <input model:value="{{inputMessage}}" class="input-field" placeholder="输入消息..." />
+    <button disabled="{{state == 2 ? true : false}}" class="send-button" bind:tap="sendMessage">发送</button>
+  </view>
+</view>
+

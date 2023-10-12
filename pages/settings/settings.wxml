@@ -1,0 +1,21 @@
+<!--pages/settings/settings.wxml-->
+<!-- settings.wxml -->
+<view class="settings-container">
+  <view class="content">
+    <view class="input-container">
+      <text>KEY：</text>
+      <input class="key-input" placeholder="请输入密钥" bindinput="inputKey" value="{{keyValue}}" />
+    </view>
+    <button class="save-button" bindtap="saveSettings">保存</button>
+  </view>
+
+  <!-- 添加购买密钥的提示 -->
+  <view class="purchase-hint">
+    <text>没有密钥？</text>
+    <text bindtap="openPurchaseLink">扫描下方二维码购买</text>
+  </view>
+  <view style="text-align: center;">
+    <image style="width: 500rpx;height:500rpx;" src="{{host + '/static/intro.png'}}"></image>
+  </view>
+  <view style="text-align: center;">已邀请人数：{{userInfo.invited.length}}</view>
+</view>
